@@ -1,0 +1,170 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Area of each farm land use",
+    "subtitle": "Million hectares, log scale"
+  },
+  "width": 320,
+  "height": 380,
+  "data": {
+    "url": "data/landuse_change.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelPadding": 8
+      },
+      "scale": {
+        "padding": 0
+      }
+    },
+    "y": {
+      "field": "area_mha",
+      "type": "quantitative",
+      "title": "Million hectares",
+      "scale": {
+        "type": "log",
+        "domain": [
+          0.4,
+          400
+        ]
+      },
+      "axis": {
+        "values": [
+          0.5,
+          1,
+          5,
+          10,
+          50,
+          100,
+          300
+        ],
+        "format": "~g"
+      }
+    },
+    "color": {
+      "field": "landuse",
+      "type": "nominal",
+      "title": "Land use",
+      "scale": {
+        "domain": [
+          "Grazing native vegetation",
+          "Modified pastures",
+          "Dryland cropping",
+          "Irrigated cropping",
+          "Irrigated pastures",
+          "Horticulture"
+        ],
+        "range": [
+          "#C291B0",
+          "#9a6f8a",
+          "#D6F49B",
+          "#a8c76a",
+          "#e9eddf",
+          "#DC2864"
+        ]
+      },
+      "legend": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "detail": {
+          "field": "landuse"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 70
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "landuse",
+            "title": "Land use"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "area_mha",
+            "title": "Million ha"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2020–21'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.landuse + ' (' + (round(datum.pct_change) > 0 ? '+' : '') + round(datum.pct_change) + '%)'",
+      "as": "label"
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "padding": {
+    "left": 5,
+    "right": 200,
+    "top": 5,
+    "bottom": 5
+  }
+}

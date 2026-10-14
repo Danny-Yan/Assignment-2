@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Australia's Vast Agricultural Sector</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Work+Sans:wght@400;500&display=swap">
+<style>
+:root{--crimson:#DC2864;--lime:#D6F49B;--mauve:#C291B0;--blue:#39A2EE;--char:#30322C;--ink:#25271f;--text:#e9eddf}
+*{box-sizing:border-box}
+body{margin:0;background:var(--char);color:var(--text);font:17px/1.65 "Work Sans",sans-serif}
+h1,h2{font-family:Fraunces,serif;color:var(--lime);line-height:1.1;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:600}
+main{max-width:1100px;margin:0 auto;padding:0 24px}
+.row{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:center;padding:56px 0;border-top:2px solid var(--ink)}
+.row.flip{grid-template-columns:1fr 1.35fr}
+.row.flip .chart{order:2}
+.row.wide{grid-template-columns:1fr}
+.row.hero{border-top:0;padding-top:72px;grid-template-columns:1fr 1.25fr}
+.text{max-width:46ch}
+.row.wide .text{max-width:none;width:100%}
+.text p{margin:0 0 1em}
+.kicker{color:var(--mauve)}
+.hl{color:var(--crimson);font-weight:500}
+.chart{min-width:0;background:var(--ink);border-radius:6px;padding:14px}
+.vz,.vz.vega-embed{display:block;width:100%}
+.vz canvas,.vz svg{display:block;margin:0 auto;width:100%!important;height:auto!important}
+.legend9{display:grid;grid-template-columns:repeat(3,26px);gap:2px;margin:10px 0 4px}
+.legend9 i{width:26px;height:26px;display:block}
+.small{font-size:.85rem;color:var(--mauve)}
+.todo{padding:60px 10px;text-align:center;color:var(--mauve);border:1px dashed var(--mauve)}
+/* conclusion spans the full width */
+.conclusion .text{max-width:none;width:100%;font-size:1.2rem}
+footer{border-top:2px solid var(--ink);padding:32px 0 56px;font-size:.85rem;color:var(--mauve)}
+footer a{color:var(--blue)}
+@media(max-width:800px){.row,.row.flip{grid-template-columns:1fr}.row.flip .chart{order:0}}
+</style>
+</head>
+<body>
+<main>
+<section class="row hero">
+  <div class="text">
+    <h1>Australia's Vast Agricultural Sector</h1>
+    <p>About 55% of Australia's land is used to grow crops or raise animals, and most of it is grazing country. This page shows <span class="hl">where</span> that land is, <span class="hl">what</span> it produces and <span class="hl">how</span> it has changed between 2010–11 and 2020–21.</p>
+  </div>
+  <div class="chart"><div class="vz" id="c-dots"></div></div>
+</section>
+<div id="story"></div>
+<section class="row wide conclusion">
+  <div class="text"><h2>Conclusion</h2><p>Farming covers just over half of Australia, but cropping is only about 5% of the country. Between 2010–11 and 2020–21, cropland grew by almost a third while modified pastures shrank, and the biggest single shift was pasture turning into cropping. Value tells a different story from area: small states can earn as much as huge ones.</p></div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+<script>
+// One entry per chart, in the order of the sketch. side "flip" puts the chart on the left.
+const S=[
+ {id:"waffle",h:"Australia as 100 squares",t:"Each square is 1% of the country in 2020–21. Grazing native vegetation covers 41 squares and pastures 8, while crops cover only 6. Conservation and protected areas take 28."},
+ {id:"heatmap",flip:1,h:"State by land use",t:"Each cell shows how much of a state's land is used in each way. Brighter cells mean a bigger share. Compare rows to see which states are grazing country, crop country or mostly protected."},
+ {id:"treemap",h:"Inside agricultural land",t:"Of all farmland, about three-quarters is native vegetation grazed by livestock and 15% is modified pasture. Dryland cropping is the lime strip at right (10%). Irrigated land and horticulture are small slivers."},
+ {id:"spike",wide:1,max:720,h:"Where value is made",t:"Spike height shows the value of farm production in 2021–22. Victoria is only a tenth the size of Queensland in farmland, yet earns more from livestock and livestock products ($10.4 billion against $8.6 billion). Values cover the main commodities listed by the ABS."},
+ {id:"dotplot",wide:1,h:"Land versus value",t:"Cropping uses about 10% of Australia's farmland but makes up about 45% of farm production value, while grazing uses 90% of the land for about 48%. In Western Australia, crops bring in 75% of the value from 14% of the land. Values cover the main commodities listed by the ABS, so fruit and vegetables are probably understated."},
+ {id:"stream",wide:1,h:"Thirty-five years of crops",t:"The area planted to these major crops grew by about 74%, from 14.8 million hectares in 1990–91 to 25.7 million in 2024–25. Canola grew from almost nothing to 3.4 million hectares, and pulses more than doubled. Cotton swings the most, from 63,000 hectares in 2007–08 to 635,000 in 2021–22."},
+ {id:"dorling",h:"Who farms the most? Who is changing?",t:"Queensland, Western Australia and New South Wales farm the most land. Victoria (−3.1%) and Western Australia (−1.2%) lost farmland between 2010–11 and 2020–21, while Tasmania (+4.1%) and South Australia (+1.3%) gained it."},
+ {id:"alluvial",h:"What did farmland turn into?",t:"Bands show net moves between land uses. The biggest is 10 million hectares of pasture becoming cropland. Another 5.4 million hectares of grazed native vegetation became conservation land."},
+ {id:"bivariate",flip:1,h:"Crops or cattle?",t:"Each square is coloured by its share of cropping and grazing. Lime squares are crop country, pink squares are grazing country, and the crop belts hug the south-west, south and east.",legend:1},
+ {id:"slope",h:"The winners and losers",t:"Dryland cropping grew 31%, from 31 to 41 million hectares. Modified pastures shrank 12%. Irrigated cropping grew fastest (+75%) but remains small."}
+];
+const LEG='<div class="legend9" aria-label="Colour key">'+[2,5,8,1,4,7,0,3,6].map(i=>'<i style="background:'+["#3d403a","#7a3550","#DC2864","#2b6fa0","#7f5f87","#b0507f","#39A2EE","#6a8fd0","#D6F49B"][i]+'"></i>').join('')+'</div><p class="small">Up = more grazing, right = more cropping. Lime has lots of both; dark grey has little of either. Cropping ranges: under 3%, 3–25%, over 25%. Grazing ranges: under 20%, 20–60%, over 60%.</p>';
+const opt={renderer:"canvas",actions:false};
+function fit(el,max){try{const c=el.querySelector("canvas,svg");if(!c)return;let n=c.parentElement;while(n&&n!==el){n.style.width="100%";n.style.display="block";n.style.minWidth="0";n=n.parentElement}if(max)c.style.setProperty("max-width",max+"px","important")}catch(e){}}
+function embed(el,id,max){
+  fetch("specs/"+id+".json").then(r=>{if(!r.ok)throw 0;return r.json()})
+   .then(s=>vegaEmbed(el,s,opt)).then(r=>{fit(el,max);return r})
+   .catch(()=>{el.innerHTML='<div class="todo">Chart "'+id+'" not built yet: add specs/'+id+'.json</div>'});
+}
+const root=document.getElementById("story");
+S.forEach(c=>{
+  const sec=document.createElement("section");
+  sec.className="row"+(c.flip?" flip":"")+(c.wide?" wide":"");
+  sec.innerHTML='<div class="chart"><div class="vz" id="c-'+c.id+'"></div></div><div class="text"><h2>'+c.h+'</h2><p>'+c.t+'</p>'+(c.legend?LEG:'')+'</div>';
+  root.appendChild(sec);
+});
+embed(document.getElementById("c-dots"),"dots");
+S.forEach(c=>embed(document.getElementById("c-"+c.id),c.id,c.max));
+</script>
+</body>
+</html>

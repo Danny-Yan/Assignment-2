@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Cropping and grazing share of land in each 1° cell",
+    "subtitle": "2020–21"
+  },
+  "width": 560,
+  "height": 470,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -132,
+      0
+    ],
+    "center": [
+      2,
+      -27
+    ],
+    "scale": 700,
+    "translate": [
+      280,
+      235
+    ]
+  },
+  "data": {
+    "url": "data/bivariate_grid.csv"
+  },
+  "mark": {
+    "type": "square",
+    "size": 125,
+    "opacity": 1
+  },
+  "encoding": {
+    "longitude": {
+      "field": "lon",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "lat",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "hex",
+      "type": "nominal",
+      "scale": null,
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "cropping_pct",
+        "title": "Cropping (%)"
+      },
+      {
+        "field": "grazing_pct",
+        "title": "Grazing (%)"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "One dot for every 26 km of land, coloured by use",
+    "subtitle": "2020–21"
+  },
+  "width": 560,
+  "height": 470,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -132,
+      0
+    ],
+    "center": [
+      2,
+      -27
+    ],
+    "scale": 700,
+    "translate": [
+      280,
+      235
+    ]
+  },
+  "data": {
+    "url": "data/land_use_points.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "size": 9,
+    "opacity": 0.9
+  },
+  "encoding": {
+    "longitude": {
+      "field": "lon",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "lat",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "landuse",
+      "type": "nominal",
+      "title": "Land use",
+      "scale": {
+        "domain": [
+          "Grazing",
+          "Cropping and horticulture",
+          "Conservation and minimal use",
+          "Other uses"
+        ],
+        "range": [
+          "#C291B0",
+          "#D6F49B",
+          "#39A2EE",
+          "#DC2864"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "landuse",
+        "title": "Land use"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

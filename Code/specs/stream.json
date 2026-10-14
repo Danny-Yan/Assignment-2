@@ -1,0 +1,123 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Area planted to major crops, Australia, 1990–91 to 2024–25",
+    "subtitle": "Thousand hectares"
+  },
+  "width": "container",
+  "height": 330,
+  "data": {
+    "url": "data/crops_year.csv"
+  },
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "season",
+      "type": "ordinal",
+      "title": null,
+      "scale": {
+        "padding": 0
+      },
+      "axis": {
+        "values": [
+          "1990–91",
+          "1995–96",
+          "2000–01",
+          "2005–06",
+          "2010–11",
+          "2015–16",
+          "2020–21",
+          "2024–25"
+        ],
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "area_kha",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": null
+    },
+    "color": {
+      "field": "crop",
+      "type": "nominal",
+      "title": "Crop",
+      "sort": [
+        "Wheat",
+        "Barley",
+        "Canola",
+        "Pulses",
+        "Sorghum",
+        "Cotton",
+        "Other grains"
+      ],
+      "scale": {
+        "domain": [
+          "Wheat",
+          "Barley",
+          "Canola",
+          "Pulses",
+          "Sorghum",
+          "Cotton",
+          "Other grains"
+        ],
+        "range": [
+          "#D6F49B",
+          "#39A2EE",
+          "#DC2864",
+          "#C291B0",
+          "#8f9a7a",
+          "#e9eddf",
+          "#5d6153"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "crop",
+        "title": "Crop"
+      },
+      {
+        "field": "season",
+        "title": "Season"
+      },
+      {
+        "field": "area_kha",
+        "title": "Thousand ha"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Value of farm production by state, 2021–22",
+    "subtitle": "Spike height = $ billion, selected commodities"
+  },
+  "width": 560,
+  "height": 470,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -132,
+      0
+    ],
+    "center": [
+      2,
+      -27
+    ],
+    "scale": 700,
+    "translate": [
+      280,
+      235
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/land_use_points.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "size": 6,
+        "color": "#4a4d42"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/value_spikes.csv"
+      },
+      "mark": {
+        "type": "line",
+        "strokeWidth": 5,
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "spike",
+          "type": "nominal"
+        },
+        "order": {
+          "field": "order",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "industry",
+          "type": "nominal",
+          "title": "Industry",
+          "scale": {
+            "domain": [
+              "Crops and hay",
+              "Livestock and livestock products",
+              "Fruit, vegetables and nurseries"
+            ],
+            "range": [
+              "#D6F49B",
+              "#C291B0",
+              "#DC2864"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "industry",
+            "title": "Industry"
+          },
+          {
+            "field": "value_bn",
+            "title": "$ billion"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/value_spikes.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.order == 0 && datum.industry == 'Livestock and livestock products'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 12,
+        "fontSize": 11,
+        "color": "#e9eddf"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

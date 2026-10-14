@@ -1,0 +1,7 @@
+group,landuse,area_mha,pct_of_agri,x,x2,y,y2,label,cx,cy
+Grazing,Grazing native vegetation,311.5,74.3,0,415.8,0,380.0,Grazing native vegetation,207.9,190.0
+Grazing,Modified pastures,63.96,15.2,415.8,502.0,0,376.7,Modified pastures,458.9,188.4
+Grazing,Irrigated pastures,0.56,0.1,415.8,502.0,376.7,380.0,,458.9,378.4
+Cropping,Dryland cropping,41.06,9.8,502.0,560.0,0,358.9,,531.0,179.5
+Cropping,Irrigated cropping,1.45,0.3,502.0,560.0,358.9,371.6,,531.0,365.2
+Horticulture,Horticulture (all types),0.96,0.2,502.0,560.0,371.6,380.0,,531.0,375.8

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Share of each state's land in each use, 2020–21",
+    "subtitle": "Percentage of each state's land area"
+  },
+  "width": "container",
+  "height": 320,
+  "data": {
+    "url": "data/state_landuse.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "landuse",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Conservation and protected areas",
+        "Other minimal use",
+        "Grazing native vegetation",
+        "Grazing pastures",
+        "Cropping",
+        "Horticulture",
+        "Forests",
+        "Urban and other",
+        "Water"
+      ],
+      "axis": {
+        "labelAngle": -40,
+        "labelLimit": 140,
+        "labelExpr": "datum.label=='Conservation and protected areas'?'Conservation':datum.label=='Other minimal use'?'Minimal use':datum.label=='Grazing native vegetation'?'Native grazing':datum.label=='Grazing pastures'?'Pastures':datum.label=='Urban and other'?'Urban & other':datum.label"
+      }
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelExpr": "datum.label=='Australian Capital Territory'?'ACT':datum.label"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "share",
+          "type": "quantitative",
+          "title": "% of state",
+          "scale": {
+            "range": [
+              "#25271f",
+              "#C291B0",
+              "#D6F49B"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "landuse",
+            "title": "Land use"
+          },
+          {
+            "field": "share",
+            "title": "Share (%)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10
+      },
+      "encoding": {
+        "text": {
+          "field": "share",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.share > 25",
+            "value": "#25271f"
+          },
+          "value": "#e9eddf"
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -1,0 +1,25 @@
+state,industry,land_share,value_share
+Australia,Grazing and livestock,89.6,47.8
+Australia,Cropping,10.1,45.4
+Australia,"Fruit, vegetables and nurseries",0.2,6.8
+New South Wales,Grazing and livestock,77.2,40.8
+New South Wales,Cropping,22.5,54.5
+New South Wales,"Fruit, vegetables and nurseries",0.3,4.7
+Victoria,Grazing and livestock,53.1,65.6
+Victoria,Cropping,44.1,25.4
+Victoria,"Fruit, vegetables and nurseries",2.8,8.9
+Queensland,Grazing and livestock,97.0,63.1
+Queensland,Cropping,2.9,31.4
+Queensland,"Fruit, vegetables and nurseries",0.1,5.5
+South Australia,Grazing and livestock,89.1,37.5
+South Australia,Cropping,10.6,45.1
+South Australia,"Fruit, vegetables and nurseries",0.3,17.4
+Western Australia,Grazing and livestock,86.2,22.7
+Western Australia,Cropping,13.7,74.9
+Western Australia,"Fruit, vegetables and nurseries",0.1,2.4
+Tasmania,Grazing and livestock,93.0,75.9
+Tasmania,Cropping,6.2,5.9
+Tasmania,"Fruit, vegetables and nurseries",0.8,18.2
+Northern Territory,Grazing and livestock,99.9,92.3
+Northern Territory,Cropping,0.1,6.0
+Northern Territory,"Fruit, vegetables and nurseries",0.0,1.6

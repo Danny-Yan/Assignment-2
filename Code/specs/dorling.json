@@ -1,0 +1,189 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Farmland by state, 2020–21",
+    "subtitle": "Circle area = farmland; colour = change since 2010–11"
+  },
+  "width": 560,
+  "height": 470,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -132,
+      0
+    ],
+    "center": [
+      2,
+      -27
+    ],
+    "scale": 700,
+    "translate": [
+      280,
+      235
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/land_use_points.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "size": 6,
+        "color": "#4a4d42"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/dorling.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "stroke": "#25271f",
+        "strokeWidth": 2,
+        "opacity": 0.88
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "size_px2",
+          "type": "quantitative",
+          "scale": null
+        },
+        "color": {
+          "field": "pct_change",
+          "type": "quantitative",
+          "title": "Change in farmland (%)",
+          "scale": {
+            "domain": [
+              -4,
+              0,
+              4
+            ],
+            "range": [
+              "#DC2864",
+              "#d9dccf",
+              "#39A2EE"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "ag_land_mha",
+            "title": "Farmland (million ha)"
+          },
+          {
+            "field": "pct_change",
+            "title": "Change since 2010–11 (%)"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/dorling.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.radius_px >= 25"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 500,
+        "color": "#25271f"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/dorling.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.radius_px < 25"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#e9eddf",
+        "dy": 24
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    }
+  ],
+  "config": {
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

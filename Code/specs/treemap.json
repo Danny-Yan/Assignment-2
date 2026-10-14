@@ -1,0 +1,365 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Agricultural land by type, 2020–21",
+    "subtitle": "Rectangle area = million hectares. Grazing is 90% of Australia's farmland.",
+    "subtitleColor": "#C291B0",
+    "subtitleFontSize": 12
+  },
+  "width": 600,
+  "height": 370,
+  "layer": [
+    {
+      "data": {
+        "url": "data/treemap.csv"
+      },
+      "mark": {
+        "type": "rect",
+        "stroke": "#25271f",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "nice": false
+          }
+        },
+        "x2": {
+          "field": "x2"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              445,
+              0
+            ],
+            "nice": false
+          }
+        },
+        "y2": {
+          "field": "y2"
+        },
+        "color": {
+          "field": "landuse",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Grazing native vegetation",
+              "Modified pastures",
+              "Irrigated pastures",
+              "Dryland cropping",
+              "Irrigated cropping",
+              "Horticulture (all types)"
+            ],
+            "range": [
+              "#C291B0",
+              "#a8789a",
+              "#d9b3c9",
+              "#D6F49B",
+              "#b9d975",
+              "#DC2864"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "landuse",
+            "title": "Land use"
+          },
+          {
+            "field": "area_mha",
+            "title": "Million ha"
+          },
+          {
+            "field": "pct_of_agri",
+            "title": "% of farmland"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/treemap_labels.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.kind != 'inside'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#e9eddf",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "ax",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "ay",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              445,
+              0
+            ],
+            "nice": false
+          }
+        },
+        "x2": {
+          "field": "lx"
+        },
+        "y2": {
+          "field": "ly"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/treemap_labels.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.kind == 'inside' && datum.angle == 0"
+        },
+        {
+          "calculate": "[datum.name, datum.area_mha + ' million ha']",
+          "as": "lines"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 15,
+        "fontWeight": 500,
+        "color": "#25271f",
+        "lineHeight": 18
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              445,
+              0
+            ],
+            "nice": false
+          }
+        },
+        "text": {
+          "field": "lines"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/treemap_labels.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.kind == 'inside' && datum.angle != 0"
+        },
+        {
+          "calculate": "datum.name + ' · ' + datum.area_mha + ' million ha'",
+          "as": "line"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": 500,
+        "color": "#25271f",
+        "angle": 270
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              445,
+              0
+            ],
+            "nice": false
+          }
+        },
+        "text": {
+          "field": "line"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/treemap_labels.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.kind == 'side'"
+        },
+        {
+          "calculate": "[datum.name, datum.area_mha + ' million ha']",
+          "as": "lines"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 12,
+        "color": "#e9eddf",
+        "dx": 4,
+        "lineHeight": 15
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              445,
+              0
+            ],
+            "nice": false
+          }
+        },
+        "text": {
+          "field": "lines"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/treemap_labels.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.kind == 'below'"
+        },
+        {
+          "calculate": "datum.name + ' · ' + datum.area_mha + ' million ha'",
+          "as": "line"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "fontSize": 12,
+        "color": "#e9eddf",
+        "dy": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "lx",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              720
+            ],
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "ly",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              445,
+              0
+            ],
+            "nice": false
+          }
+        },
+        "text": {
+          "field": "line"
+        }
+      }
+    }
+  ],
+  "config": {
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#C291B0",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gradientLength": 220,
+      "padding": 4
+    }
+  }
+}

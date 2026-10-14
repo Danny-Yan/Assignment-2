@@ -1,0 +1,215 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis maxScale="0" hasScaleBasedVisibilityFlag="0" version="3.2.3-Bonn" minScale="1e+8">
+  <pipe>
+    <rasterrenderer opacity="1" type="paletted" alphaBand="-1" band="1">
+      <rasterTransparency/>
+      <minMaxOrigin>
+        <limits>None</limits>
+        <extent>WholeRaster</extent>
+        <statAccuracy>Estimated</statAccuracy>
+        <cumulativeCutLower>0.02</cumulativeCutLower>
+        <cumulativeCutUpper>0.98</cumulativeCutUpper>
+        <stdDevFactor>2</stdDevFactor>
+      </minMaxOrigin>
+      <colorPalette>
+		<paletteEntry label="1" value="100" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="110" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="111" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="112" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="113" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="114" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="115" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="116" color="#9666CC" alpha="255"/>
+		<paletteEntry label="1" value="117" color="#9666CC" alpha="255"/>
+		<paletteEntry label="2" value="120" color="#C9BEFF" alpha="255"/>
+		<paletteEntry label="2" value="121" color="#C9BEFF" alpha="255"/>
+		<paletteEntry label="2" value="122" color="#C9BEFF" alpha="255"/>
+		<paletteEntry label="2" value="123" color="#C9BEFF" alpha="255"/>
+		<paletteEntry label="2" value="124" color="#C9BEFF" alpha="255"/>
+		<paletteEntry label="2" value="125" color="#C9BEFF" alpha="255"/>
+		<paletteEntry label="3" value="130" color="#DE87DD" alpha="255"/>
+		<paletteEntry label="3" value="131" color="#DE87DD" alpha="255"/>
+		<paletteEntry label="3" value="132" color="#DE87DD" alpha="255"/>
+		<paletteEntry label="3" value="133" color="#DE87DD" alpha="255"/>
+		<paletteEntry label="3" value="134" color="#DE87DD" alpha="255"/>
+		<paletteEntry label="4" value="200" color="#FFFFE5" alpha="255"/>
+		<paletteEntry label="4" value="210" color="#FFFFE5" alpha="255"/>
+		<paletteEntry label="5" value="220" color="#298944" alpha="255"/>
+		<paletteEntry label="5" value="221" color="#298944" alpha="255"/>
+		<paletteEntry label="5" value="222" color="#298944" alpha="255"/>
+		<paletteEntry label="7" value="300" color="#FFD37F" alpha="255"/>
+		<paletteEntry label="6" value="310" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="311" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="312" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="313" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="314" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="7" value="320" color="#FFD37F" alpha="255"/>
+		<paletteEntry label="7" value="321" color="#FFD37F" alpha="255"/>
+		<paletteEntry label="7" value="322" color="#FFD37F" alpha="255"/>
+		<paletteEntry label="7" value="323" color="#FFD37F" alpha="255"/>
+		<paletteEntry label="7" value="324" color="#FFD37F" alpha="255"/>
+		<paletteEntry label="7" value="325" color="#FFD37F" alpha="255"/>
+		<paletteEntry label="8" value="330" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="331" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="332" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="333" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="334" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="335" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="336" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="337" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="8" value="338" color="#FFFF00" alpha="255"/>
+		<paletteEntry label="9" value="340" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="341" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="342" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="343" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="344" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="345" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="346" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="347" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="348" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="349" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="350" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="351" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="352" color="#AB8778" alpha="255"/>
+		<paletteEntry label="9" value="353" color="#AB8778" alpha="255"/>
+		<paletteEntry label="11" value="400" color="#FFAA00" alpha="255"/>
+		<paletteEntry label="6" value="410" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="411" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="412" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="413" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="6" value="414" color="#ADFFB5" alpha="255"/>
+		<paletteEntry label="11" value="420" color="#FFAA00" alpha="255"/>
+		<paletteEntry label="11" value="421" color="#FFAA00" alpha="255"/>
+		<paletteEntry label="11" value="422" color="#FFAA00" alpha="255"/>
+		<paletteEntry label="11" value="423" color="#FFAA00" alpha="255"/>
+		<paletteEntry label="11" value="424" color="#FFAA00" alpha="255"/>
+		<paletteEntry label="12" value="430" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="431" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="432" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="433" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="434" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="435" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="436" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="437" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="438" color="#C9B854" alpha="255"/>
+		<paletteEntry label="12" value="439" color="#C9B854" alpha="255"/>
+		<paletteEntry label="13" value="440" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="441" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="442" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="443" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="444" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="445" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="446" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="447" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="448" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="449" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="450" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="451" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="452" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="453" color="#9C542E" alpha="255"/>
+		<paletteEntry label="13" value="454" color="#9C542E" alpha="255"/>
+		<paletteEntry label="10" value="460" color="#000000" alpha="255"/>
+		<paletteEntry label="10" value="461" color="#000000" alpha="255"/>
+		<paletteEntry label="10" value="462" color="#000000" alpha="255"/>
+		<paletteEntry label="10" value="463" color="#000000" alpha="255"/>
+		<paletteEntry label="10" value="464" color="#000000" alpha="255"/>
+		<paletteEntry label="10" value="465" color="#000000" alpha="255"/>
+		<paletteEntry label="17" value="500" color="#9B0000" alpha="255"/>
+		<paletteEntry label="14" value="510" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="511" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="512" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="513" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="514" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="515" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="520" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="521" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="522" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="523" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="524" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="525" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="526" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="527" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="14" value="528" color="#FFC9BE" alpha="255"/>
+		<paletteEntry label="17" value="530" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="531" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="532" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="533" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="534" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="535" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="536" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="537" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="538" color="#9B0000" alpha="255"/>
+		<paletteEntry label="16" value="540" color="#FF0000" alpha="255"/>
+		<paletteEntry label="16" value="541" color="#FF0000" alpha="255"/>
+		<paletteEntry label="15" value="542" color="#B2B2B2" alpha="255"/>
+		<paletteEntry label="15" value="543" color="#B2B2B2" alpha="255"/>
+		<paletteEntry label="15" value="544" color="#B2B2B2" alpha="255"/>
+		<paletteEntry label="15" value="545" color="#B2B2B2" alpha="255"/>
+		<paletteEntry label="17" value="550" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="551" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="552" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="553" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="554" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="555" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="560" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="561" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="562" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="563" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="564" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="565" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="566" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="567" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="570" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="571" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="572" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="573" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="574" color="#9B0000" alpha="255"/>
+		<paletteEntry label="17" value="575" color="#9B0000" alpha="255"/>
+		<paletteEntry label="18" value="580" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="581" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="582" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="583" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="584" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="590" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="591" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="592" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="593" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="594" color="#47828F" alpha="255"/>
+		<paletteEntry label="18" value="595" color="#47828F" alpha="255"/>
+		<paletteEntry label="19" value="600" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="610" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="611" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="612" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="613" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="614" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="620" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="621" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="622" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="623" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="630" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="631" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="632" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="633" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="640" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="641" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="642" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="643" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="650" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="651" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="652" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="653" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="654" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="660" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="661" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="662" color="#0000FF" alpha="255"/>
+		<paletteEntry label="19" value="663" color="#0000FF" alpha="255"/>
+		<paletteEntry label="0" value="0" color="#FFFFFF" alpha="255"/>
+      </colorPalette>
+      <colorramp type="randomcolors" name="[source]"/>
+    </rasterrenderer>
+    <brightnesscontrast brightness="0" contrast="0"/>
+    <huesaturation colorizeStrength="100" colorizeBlue="128" grayscaleMode="0" colorizeGreen="128" saturation="0" colorizeOn="0" colorizeRed="255"/>
+    <rasterresampler maxOversampling="2"/>
+  </pipe>
+  <blendMode>0</blendMode>
+</qgis>

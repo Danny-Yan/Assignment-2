@@ -1,0 +1,191 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Land versus value",
+    "subtitle": "Each industry's share of farmland (blue) and of farm production value (crimson), by state"
+  },
+  "data": {
+    "url": "data/land_vs_value.csv"
+  },
+  "facet": {
+    "column": {
+      "field": "industry",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Grazing and livestock",
+        "Cropping",
+        "Fruit, vegetables and nurseries"
+      ],
+      "header": {
+        "labelColor": "#D6F49B",
+        "labelFontSize": 13,
+        "labelFont": "Fraunces",
+        "labelOrient": "top"
+      }
+    }
+  },
+  "spec": {
+    "width": 230,
+    "height": {
+      "step": 26
+    },
+    "encoding": {
+      "y": {
+        "field": "state",
+        "type": "nominal",
+        "title": null,
+        "sort": [
+          "Australia",
+          "Queensland",
+          "New South Wales",
+          "Victoria",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory"
+        ],
+        "axis": {
+          "labelLimit": 130
+        }
+      }
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "rule",
+          "strokeWidth": 3,
+          "color": "#8f9a7a"
+        },
+        "encoding": {
+          "x": {
+            "field": "land_share",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                100
+              ]
+            },
+            "title": "% of state total",
+            "axis": {
+              "values": [
+                0,
+                25,
+                50,
+                75,
+                100
+              ]
+            }
+          },
+          "x2": {
+            "field": "value_share"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "fold": [
+              "land_share",
+              "value_share"
+            ],
+            "as": [
+              "measure",
+              "share"
+            ]
+          },
+          {
+            "calculate": "datum.measure == 'land_share' ? 'Share of farmland' : 'Share of farm production value'",
+            "as": "label"
+          }
+        ],
+        "mark": {
+          "type": "circle",
+          "size": 110,
+          "opacity": 1
+        },
+        "encoding": {
+          "x": {
+            "field": "share",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "label",
+            "type": "nominal",
+            "title": null,
+            "scale": {
+              "domain": [
+                "Share of farmland",
+                "Share of farm production value"
+              ],
+              "range": [
+                "#39A2EE",
+                "#DC2864"
+              ]
+            },
+            "legend": {
+              "orient": "bottom",
+              "labelColor": "#e9eddf"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "state",
+              "title": "State"
+            },
+            {
+              "field": "industry",
+              "title": "Industry"
+            },
+            {
+              "field": "label",
+              "title": "Measure"
+            },
+            {
+              "field": "share",
+              "title": "Share (%)",
+              "format": ".1f"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "axis": {
+      "y": "shared"
+    }
+  },
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "spacing": 26
+}

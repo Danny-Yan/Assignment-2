@@ -1,0 +1,136 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "title": {
+    "text": "Share of Australia's land by use, 2020–21",
+    "subtitle": "1 square = 1%"
+  },
+  "width": 330,
+  "height": 330,
+  "data": {
+    "url": "data/waffle.csv"
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "sum",
+          "field": "squares",
+          "as": "end"
+        }
+      ],
+      "frame": [
+        null,
+        0
+      ]
+    },
+    {
+      "calculate": "datum.end - datum.squares",
+      "as": "start"
+    },
+    {
+      "calculate": "sequence(datum.start, datum.end)",
+      "as": "idx"
+    },
+    {
+      "flatten": [
+        "idx"
+      ]
+    },
+    {
+      "calculate": "floor(datum.idx / 10)",
+      "as": "row"
+    },
+    {
+      "calculate": "datum.idx % 10",
+      "as": "col"
+    }
+  ],
+  "mark": {
+    "type": "square",
+    "size": 1000
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "landuse",
+      "type": "nominal",
+      "title": "Land use",
+      "sort": null,
+      "scale": {
+        "domain": [
+          "Grazing native vegetation",
+          "Grazing pastures",
+          "Cropping",
+          "Conservation and protected areas",
+          "Other minimal use",
+          "Forests",
+          "Everything else"
+        ],
+        "range": [
+          "#C291B0",
+          "#9a6f8a",
+          "#D6F49B",
+          "#39A2EE",
+          "#2b6fa0",
+          "#4f8a5b",
+          "#7d8070"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "columns": 2,
+        "labelLimit": 260,
+        "title": "Land use"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "landuse",
+        "title": "Land use"
+      },
+      {
+        "field": "percent",
+        "title": "% of Australia"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "gridColor": "#3f4238",
+      "domainColor": "#55584d",
+      "tickColor": "#55584d"
+    },
+    "legend": {
+      "labelColor": "#e9eddf",
+      "titleColor": "#e9eddf",
+      "orient": "bottom",
+      "gradientLength": 220,
+      "padding": 4
+    },
+    "title": {
+      "color": "#e9eddf",
+      "font": "Fraunces",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#C291B0",
+      "subtitleFont": "Work Sans",
+      "subtitleFontSize": 12,
+      "subtitlePadding": 4
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}
