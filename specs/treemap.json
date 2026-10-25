@@ -8,7 +8,7 @@
     "subtitleFontSize": 12
   },
   "width": 600,
-  "height": 370,
+  "height": 675,
   "layer": [
     {
       "data": {
@@ -41,7 +41,7 @@
           "axis": null,
           "scale": {
             "domain": [
-              445,
+              810,
               0
             ],
             "nice": false
@@ -122,7 +122,7 @@
           "axis": null,
           "scale": {
             "domain": [
-              445,
+              810,
               0
             ],
             "nice": false
@@ -175,7 +175,7 @@
           "axis": null,
           "scale": {
             "domain": [
-              445,
+              810,
               0
             ],
             "nice": false
@@ -225,7 +225,7 @@
           "axis": null,
           "scale": {
             "domain": [
-              445,
+              810,
               0
             ],
             "nice": false
@@ -277,7 +277,7 @@
           "axis": null,
           "scale": {
             "domain": [
-              445,
+              810,
               0
             ],
             "nice": false
@@ -328,7 +328,7 @@
           "axis": null,
           "scale": {
             "domain": [
-              445,
+              810,
               0
             ],
             "nice": false

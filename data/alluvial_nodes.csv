@@ -1,13 +1,13 @@
-side,group,x,x2,y,y2,cy
-from,Other minimal use,190,204,0,79.0,39.5
-from,Grazing native vegetation,190,204,93.0,171.9,132.4
-from,Grazing pastures,190,204,185.9,312.1,249.0
-from,Cropping,190,204,326.1,327.4,326.8
-from,Forests,190,204,341.4,343.8,342.6
-from,Water,190,204,357.8,360.0,358.9
-to,Conservation and protected areas,380,394,0,63.3,31.6
-to,Grazing native vegetation,380,394,77.3,148.1,112.7
-to,Grazing pastures,380,394,162.1,184.9,173.5
-to,Cropping,380,394,198.9,321.4,260.2
-to,Horticulture,380,394,335.4,337.3,336.3
-to,Urban and other,380,394,351.3,360.0,355.6
+side,group,x,x2,y,y2,cy,wrapped
+from,Other minimal use,118,132,0,79.0,39.5,Other minimal use
+from,Grazing native vegetation,118,132,93.0,171.9,132.4,Grazing native|vegetation
+from,Grazing pastures,118,132,185.9,312.1,249.0,Grazing pastures
+from,Cropping,118,132,326.1,327.4,326.8,Cropping
+from,Forests,118,132,341.4,343.8,342.6,Forests
+from,Water,118,132,357.8,360.0,358.9,Water
+to,Conservation and protected areas,456,470,0,63.3,31.6,Conservation and|protected areas
+to,Grazing native vegetation,456,470,77.3,148.1,112.7,Grazing native|vegetation
+to,Grazing pastures,456,470,162.1,184.9,173.5,Grazing pastures
+to,Cropping,456,470,198.9,321.4,260.2,Cropping
+to,Horticulture,456,470,335.4,337.3,336.3,Horticulture
+to,Urban and other,456,470,351.3,360.0,355.6,Urban and other

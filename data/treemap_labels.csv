@@ -1,7 +1,7 @@
 name,area_mha,kind,ax,ay,lx,ly,align,angle
-Grazing native vegetation,311.5,inside,0,0,207.9,190.0,center,0
-Modified pastures,64.0,inside,0,0,458.9,190,center,270
-Dryland cropping,41.1,side,560.0,179.5,582.0,179.5,left,0
-Irrigated cropping,1.4,side,560.0,365.2,582.0,361.2,left,0
-Irrigated pastures,0.6,below,458.9,380.0,458.9,405,center,0
-Horticulture,1.0,below,531.0,380.0,571.0,432,center,0
+Grazing native vegetation,311.5,inside,0,0.0,207.9,360.0,center,0
+Modified pastures,64.0,inside,0,0.0,458.9,360.0,center,270
+Dryland cropping,41.1,side,560.0,340.1,582.0,340.1,left,0
+Irrigated cropping,1.4,side,560.0,692.0,582.0,684.4,left,0
+Irrigated pastures,0.6,below,458.9,720.0,458.9,745,center,0
+Horticulture,1.0,below,531.0,720.0,571.0,772,center,0

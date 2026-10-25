@@ -5,7 +5,7 @@
     "text": "Net area that changed land use, 2010–11 to 2020–21",
     "subtitle": "Band width = area"
   },
-  "width": "container",
+  "width": 600,
   "height": 380,
   "layer": [
     {
@@ -27,7 +27,7 @@
           "scale": {
             "domain": [
               0,
-              590
+              600
             ]
           }
         },
@@ -227,6 +227,10 @@
       "transform": [
         {
           "filter": "datum.side == 'from'"
+        },
+        {
+          "calculate": "split(datum.wrapped,'|')",
+          "as": "lines"
         }
       ],
       "mark": {
@@ -234,7 +238,9 @@
         "align": "right",
         "dx": -6,
         "fontSize": 11,
-        "color": "#e9eddf"
+        "color": "#e9eddf",
+        "lineHeight": 13,
+        "baseline": "middle"
       },
       "encoding": {
         "x": {
@@ -246,7 +252,7 @@
           "type": "quantitative"
         },
         "text": {
-          "field": "group"
+          "field": "lines"
         }
       }
     },
@@ -257,6 +263,10 @@
       "transform": [
         {
           "filter": "datum.side == 'to'"
+        },
+        {
+          "calculate": "split(datum.wrapped,'|')",
+          "as": "lines"
         }
       ],
       "mark": {
@@ -264,7 +274,9 @@
         "align": "left",
         "dx": 20,
         "fontSize": 11,
-        "color": "#e9eddf"
+        "color": "#e9eddf",
+        "lineHeight": 13,
+        "baseline": "middle"
       },
       "encoding": {
         "x": {
@@ -276,7 +288,7 @@
           "type": "quantitative"
         },
         "text": {
-          "field": "group"
+          "field": "lines"
         }
       }
     }

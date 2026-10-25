@@ -33,6 +33,12 @@ main{max-width:1100px;margin:0 auto;padding:0 24px}
 /* conclusion spans the full width */
 .conclusion .text{max-width:none;width:100%;font-size:1.2rem}
 footer{border-top:2px solid var(--ink);padding:32px 0 56px;font-size:.85rem;color:var(--mauve)}
+footer h3{font-family:Fraunces,serif;color:var(--lime);font-size:1.05rem;margin:0 0 .6em}
+footer p,footer ul{margin:0 0 .8em}
+footer ul{padding-left:1.1em}
+footer li{margin-bottom:.5em}
+.foot-grid{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:40px;align-items:start}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr}}
 footer a{color:var(--blue)}
 @media(max-width:800px){.row,.row.flip{grid-template-columns:1fr}.row.flip .chart{order:0}}
 </style>
@@ -50,6 +56,31 @@ footer a{color:var(--blue)}
 <section class="row wide conclusion">
   <div class="text"><h2>Conclusion</h2><p>Farming covers just over half of Australia, but cropping is only about 5% of the country. Between 2010–11 and 2020–21, cropland grew by almost a third while modified pastures shrank, and the biggest single shift was pasture turning into cropping. Value tells a different story from area: small states can earn as much as huge ones.</p></div>
 </section>
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h3>About this page</h3>
+      <p><strong>Author:</strong> Danny Yan<br><strong>Student ID:</strong> 33881073<br><strong>Unit:</strong> FIT3179 Data Visualisation<br><strong>Date:</strong> 25 October 2026</p>
+      <p>Built with Vega-Lite and Vega. Code and wording were produced with assistance from Claude, an AI assistant by Anthropic.</p>
+    </div>
+    <div>
+      <h3>Data sources</h3>
+      <ul>
+        <li>ABARES (2026), <a href="https://doi.org/10.25814/n0z4-5y98">Land use of Australia 2010–11 to 2020–21, version 7.1</a> (physical accounts, change matrices and 2020–21 land use map), CC BY 4.0. Also listed on <a href="https://data.gov.au/data/dataset/31085c09-614b-46f6-8b3e-74582d813a38">data.gov.au</a>.</li>
+        <li>ABARES (2026), <a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-commodities/agricultural-commodities-trade-data">Agricultural commodities: June quarter 2026, Statistical tables</a> (Table 10, crop areas; 2024–25 is an estimate).</li>
+        <li>ABS, <a href="https://www.abs.gov.au/Ausstats/abs@.nsf/0/CDC7E49DBE0778A8CA258575002743F9">Value of Agricultural Commodities Produced, Australia, 2021–22</a>.</li>
+      </ul>
+      <p class="small">Dots and grid cells were sampled from the published 2020–21 land use map. State positions in the cartogram and spike map are approximate centres. Value figures cover the main commodities listed by the ABS.</p>
+    </div>
+    <div>
+      <h3>Tools and fonts</h3>
+      <ul>
+        <li><a href="https://vega.github.io/vega-lite/">Vega-Lite</a>, <a href="https://vega.github.io/vega/">Vega</a> and <a href="https://github.com/vega/vega-embed">Vega-Embed</a></li>
+        <li><a href="https://fonts.google.com/specimen/Fraunces">Fraunces</a> and <a href="https://fonts.google.com/specimen/Work+Sans">Work Sans</a> (Google Fonts)</li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>

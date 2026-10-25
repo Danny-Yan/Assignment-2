@@ -135,6 +135,95 @@
           "field": "state"
         }
       }
+    },
+    {
+      "data": {
+        "url": "data/spike_key.csv"
+      },
+      "mark": {
+        "type": "line",
+        "strokeWidth": 5,
+        "strokeCap": "round",
+        "color": "#e9eddf"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "id",
+          "type": "nominal"
+        },
+        "order": {
+          "field": "order",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/spike_key.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.order == 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 14,
+        "fontSize": 11,
+        "color": "#e9eddf"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 111.41,
+            "lat": -11.7,
+            "t": "Spike height key"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#D6F49B"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
     }
   ],
   "config": {

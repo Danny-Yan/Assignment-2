@@ -50,11 +50,15 @@
           "type": "quantitative",
           "title": "% of state",
           "scale": {
+            "domain": [
+              0,
+              60
+            ],
             "range": [
-              "#25271f",
-              "#C291B0",
-              "#D6F49B"
-            ]
+              "#33262c",
+              "#DC2864"
+            ],
+            "interpolate": "lab"
           }
         },
         "tooltip": [
@@ -85,11 +89,7 @@
           "format": ".0f"
         },
         "color": {
-          "condition": {
-            "test": "datum.share > 25",
-            "value": "#25271f"
-          },
-          "value": "#e9eddf"
+          "value": "#f4f6ec"
         }
       }
     }

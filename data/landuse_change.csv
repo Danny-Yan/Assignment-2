@@ -1,19 +1,19 @@
-landuse,year,area_mha,pct_change
-Grazing native vegetation,2010–11,312.185,
-Grazing native vegetation,2015–16,310.493,
-Grazing native vegetation,2020–21,311.498,-0.0
-Modified pastures,2010–11,72.691,
-Modified pastures,2015–16,63.688,
-Modified pastures,2020–21,63.959,-12.0
-Dryland cropping,2010–11,31.286,
-Dryland cropping,2015–16,39.931,
-Dryland cropping,2020–21,41.06,31.0
-Irrigated cropping,2010–11,0.826,
-Irrigated cropping,2015–16,1.541,
-Irrigated cropping,2020–21,1.446,75.0
-Irrigated pastures,2010–11,0.64,
-Irrigated pastures,2015–16,0.841,
-Irrigated pastures,2020–21,0.557,-13.0
-Horticulture,2010–11,0.765,
-Horticulture,2015–16,0.837,
-Horticulture,2020–21,0.965,26.0
+landuse,year,area_mha,pct_change,lines
+Grazing native vegetation,2010–11,312.185,,
+Grazing native vegetation,2015–16,310.493,,
+Grazing native vegetation,2020–21,311.498,-0.0,Grazing native|vegetation (0%)
+Modified pastures,2010–11,72.691,,
+Modified pastures,2015–16,63.688,,
+Modified pastures,2020–21,63.959,-12.0,Modified|pastures (−12%)
+Dryland cropping,2010–11,31.286,,
+Dryland cropping,2015–16,39.931,,
+Dryland cropping,2020–21,41.06,31.0,Dryland|cropping (+31%)
+Irrigated cropping,2010–11,0.826,,
+Irrigated cropping,2015–16,1.541,,
+Irrigated cropping,2020–21,1.446,75.0,Irrigated|cropping (+75%)
+Irrigated pastures,2010–11,0.64,,
+Irrigated pastures,2015–16,0.841,,
+Irrigated pastures,2020–21,0.557,-13.0,Irrigated|pastures (−13%)
+Horticulture,2010–11,0.765,,
+Horticulture,2015–16,0.837,,
+Horticulture,2020–21,0.965,26.0,Horticulture|(+26%)

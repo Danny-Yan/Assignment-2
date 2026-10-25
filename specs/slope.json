@@ -5,8 +5,8 @@
     "text": "Area of each farm land use",
     "subtitle": "Million hectares, log scale"
   },
-  "width": 320,
-  "height": 380,
+  "width": 420,
+  "height": 520,
   "data": {
     "url": "data/landuse_change.csv"
   },
@@ -17,7 +17,8 @@
       "title": null,
       "axis": {
         "labelAngle": 0,
-        "labelPadding": 8
+        "labelPadding": 8,
+        "grid": false
       },
       "scale": {
         "padding": 0
@@ -31,20 +32,63 @@
         "type": "log",
         "domain": [
           0.4,
-          400
-        ]
+          500
+        ],
+        "nice": false
       },
       "axis": {
         "values": [
           0.5,
           1,
+          2,
+          3,
+          4,
           5,
+          6,
+          7,
+          8,
+          9,
           10,
+          20,
+          30,
+          40,
           50,
+          60,
+          70,
+          80,
+          90,
           100,
-          300
+          200,
+          300,
+          400,
+          500
         ],
-        "format": "~g"
+        "format": "~g",
+        "grid": true,
+        "ticks": true,
+        "labelExpr": "indexof([1,10,100,1000], datum.value) >= 0 ? datum.label : ''",
+        "gridColor": {
+          "condition": {
+            "test": "indexof([1,10,100,1000], datum.value) >= 0",
+            "value": "#8f9a7a"
+          },
+          "value": "#4a4d42"
+        },
+        "gridWidth": {
+          "condition": {
+            "test": "indexof([1,10,100,1000], datum.value) >= 0",
+            "value": 1.2
+          },
+          "value": 0.5
+        },
+        "tickSize": {
+          "condition": {
+            "test": "indexof([1,10,100,1000], datum.value) >= 0",
+            "value": 9
+          },
+          "value": 4
+        },
+        "tickColor": "#8f9a7a"
       }
     },
     "color": {
@@ -111,25 +155,25 @@
       "transform": [
         {
           "filter": "datum.year == '2020–21'"
+        },
+        {
+          "calculate": "split(datum.lines,'|')",
+          "as": "lab"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
         "dx": 12,
-        "fontSize": 12
+        "fontSize": 11,
+        "lineHeight": 12,
+        "baseline": "middle"
       },
       "encoding": {
         "text": {
-          "field": "label"
+          "field": "lab"
         }
       }
-    }
-  ],
-  "transform": [
-    {
-      "calculate": "datum.landuse + ' (' + (round(datum.pct_change) > 0 ? '+' : '') + round(datum.pct_change) + '%)'",
-      "as": "label"
     }
   ],
   "config": {
@@ -163,7 +207,7 @@
   },
   "padding": {
     "left": 5,
-    "right": 200,
+    "right": 5,
     "top": 5,
     "bottom": 5
   }
